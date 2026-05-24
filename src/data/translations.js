@@ -6,7 +6,8 @@ export const translations = {
       about: "About Us",
       facilities: "Facilities",
       contact: "Contact Us",
-      register: "Register Now"
+      register: "Register Now",
+      login: "Login"
     },
     hero: {
       badge: "Riyadh's Premier Youth Academy",
@@ -244,7 +245,8 @@ export const translations = {
       about: "من نحن",
       facilities: "مرافقنا",
       contact: "اتصل بنا",
-      register: "سجل الآن"
+      register: "سجل الآن",
+      login: "تسجيل الدخول"
     },
     hero: {
       badge: "الأكاديمية الرياضية الرائدة في الرياض",

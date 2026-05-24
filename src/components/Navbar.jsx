@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Menu, X, Globe, Trophy } from 'lucide-react';
+import { Menu, X, Globe, Trophy, LogIn } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
@@ -78,7 +79,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Actions: Lang Switch & CTA */}
+          {/* Actions: Lang Switch, Login & CTA */}
           <div className="hidden md:flex items-center gap-4">
             <button
               onClick={toggleLanguage}
@@ -87,6 +88,13 @@ export default function Navbar() {
               <Globe className="h-4 w-4 text-primary" />
               <span>{language === 'ar' ? 'English' : 'العربية'}</span>
             </button>
+            <Link
+              to="/login"
+              className="flex items-center gap-2 border border-primary/20 text-primary hover:border-primary font-bold px-4 py-2.5 rounded-xl text-sm shadow-sm hover:shadow-md hover:bg-primary/5 hover:-translate-y-0.5 transition-all cursor-pointer"
+            >
+              <LogIn className="h-4 w-4" />
+              <span>{t('nav.login')}</span>
+            </Link>
             <button
               onClick={() => scrollToSection('register')}
               className="bg-primary hover:bg-primary-light text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer"
@@ -141,6 +149,14 @@ export default function Navbar() {
                 >
                   {t('nav.register')}
                 </button>
+                <Link
+                  to="/login"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full flex items-center justify-center gap-2 border border-primary/20 text-primary font-bold py-3.5 rounded-xl shadow-sm hover:bg-primary/5 transition-all"
+                >
+                  <LogIn className="h-5 w-5" />
+                  <span>{t('nav.login')}</span>
+                </Link>
               </div>
             </div>
           </motion.div>
